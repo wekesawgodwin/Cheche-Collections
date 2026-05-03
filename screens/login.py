@@ -8,48 +8,52 @@ import database
 KV_LOGIN = '''
 <LoginScreen>:
     MDCard:
+        style: "elevated"
         size_hint: None, None
         size: "320dp", "400dp"
         pos_hint: {"center_x": .5, "center_y": .5}
-        elevation: 4
-        padding: 25
-        spacing: 25
-        orientation: 'vertical'
+        padding: "25dp"
+        
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: "20dp"
 
-        MDLabel:
-            text: "Boutique POS"
-            theme_text_color: "Primary"
-            font_style: "HeadlineMedium"
-            halign: "center"
-            size_hint_y: None
-            height: self.texture_size[1]
-            padding_y: 15
+            MDLabel:
+                text: "Cheche's Collection"
+                theme_text_color: "Primary"
+                font_style: "Headline"
+                role: "medium"
+                halign: "center"
+                size_hint_y: None
+                height: self.texture_size[1]
 
-        MDTextField:
-            id: username_field
-            mode: "outlined"
-            MDTextFieldHintText:
-                text: "Username"
-            MDTextFieldIconLeading:
-                icon: "account"
+            MDTextField:
+                id: username_field
+                mode: "outlined"
+                MDTextFieldLeadingIcon:
+                    icon: "account"
+                MDTextFieldHintText:
+                    text: "Username"
 
-        MDTextField:
-            id: password_field
-            mode: "outlined"
-            password: True
-            MDTextFieldHintText:
-                text: "Password"
-            MDTextFieldIconLeading:
-                icon: "key-variant"
+            MDTextField:
+                id: password_field
+                mode: "outlined"
+                password: True
+                MDTextFieldLeadingIcon:
+                    icon: "key-variant"
+                MDTextFieldHintText:
+                    text: "Password"
 
-        MDFillRoundFlatButton:
-            text: "LOGIN"
-            pos_hint: {"center_x": .5}
-            on_release: root.do_login()
+            MDButton:
+                style: "filled"
+                pos_hint: {"center_x": .5}
+                on_release: root.do_login()
+                MDButtonText:
+                    text: "LOGIN"
 
-        Widget:
-            size_hint_y: None
-            height: "10dp"
+            Widget:
+                size_hint_y: None
+                height: "10dp"
 '''
 Builder.load_string(KV_LOGIN)
 
