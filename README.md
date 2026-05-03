@@ -6,7 +6,7 @@
 
 | Layer | Technology |
 |-------|-----------|
-| UI | KivyMD 1.2 (Material Design 3) |
+| UI | KivyMD 1.1 (Material Design 3) |
 | Database | SQLite 3 (WAL mode, foreign keys) |
 | Analytics | Matplotlib (Agg backend) |
 | Packaging | Buildozer + python-for-android |
@@ -27,31 +27,21 @@ boutique_pos/
 │   ├── schema.py               ← All CREATE TABLE + indexes
 │   └── db_manager.py           ← Singleton DB, all SQL operations
 │
-├── screens/
+├── ui/
 │   ├── login_screen.py
 │   ├── main_screen.py          ← BottomNavigation shell
-│   ├── dashboard_screen.py     ← KPI cards + charts
-│   ├── inventory_screen.py     ← Product CRUD + stock adjust
-│   ├── sales_screen.py         ← POS / cart / checkout / receipt
-│   ├── reports_screen.py       ← Reports + CSV/XLSX export
-│   └── settings_screen.py      ← Users, categories, suppliers, backup
+│   ├── dashboard.py     ← KPI cards + charts
+│   ├── inventory.py     ← Product CRUD + stock adjust
+│   ├── sales.py         ← POS / cart / checkout / receipt
+│   ├── reports.py       ← Reports + CSV/XLSX export
+│   └── settings.py      ← Users, categories, suppliers, backup
 │
-├── analytics/
-│   └── charts.py               ← Matplotlib chart generators → PNG bytes
 │
-├── utils/
+├── core/
 │   ├── session.py              ← Current user session
 │   ├── formatters.py           ← Currency, date helpers
 │   └── export.py               ← CSV / Excel export
 │
-└── kv/                         ← Kivy layout files
-    ├── login.kv
-    ├── dashboard.kv
-    ├── inventory.kv
-    ├── sales.kv
-    ├── reports.kv
-    ├── settings.kv
-    └── main.kv
 ```
 
 ---
